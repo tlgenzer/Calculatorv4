@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.travisgenzer.calculatorv4.MainActivity">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.travisgenzer.calculatorv4.MainActivity" android:clickable="true">
 
     <TextView
-        android:id="@+id/label_bill"
-        style="@style/LabelStyle"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:minWidth="120dp"
-        android:text="@string/label_bill"/>
+            android:id="@+id/label_bill"
+            style="@style/LabelStyle"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:minWidth="120dp"
+            android:text="@string/label_bill"/>
 
     <EditText
-        android:id="@+id/amount_bill"
-        style="@style/InputStyle"
-        android:layout_marginRight="20dp"
-        android:layout_toRightOf="@+id/label_bill"
-        android:layout_alignBottom="@+id/label_bill"
-        android:layout_alignParentRight="true"
-        android:hint="@string/amount_bill_hint"
-        android:inputType="numberDecimal"/>
+            android:id="@+id/amount_bill"
+            style="@style/InputStyle"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/label_bill"
+            android:layout_alignBottom="@+id/label_bill"
+            android:layout_alignParentRight="true"
+            android:hint="@string/amount_bill_hint"
+            android:inputType="numberDecimal"/>
 
     <TextView
-        android:id="@+id/label_tip_percent"
-        style="@style/LabelStyle"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/label_bill"
-        android:layout_alignLeft="@+id/label_bill"
-        android:layout_alignRight="@+id/label_bill"
-        android:text="@string/label_tip_percent"/>
+            android:id="@+id/label_tip_percent"
+            style="@style/LabelStyle"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/label_bill"
+            android:layout_alignLeft="@+id/label_bill"
+            android:layout_alignRight="@+id/label_bill"
+            android:text="@string/label_tip_percent"/>
 
     <EditText
-        android:id="@+id/amount_tip_percent"
-        style="@style/InputStyle"
-        android:layout_toRightOf="@+id/label_tip_percent"
-        android:layout_alignBottom="@+id/label_tip_percent"
-        android:layout_alignRight="@id/amount_bill"
-        android:hint="@string/amount_tip_percent_hint"
-        android:inputType="number" />
+            android:id="@+id/amount_tip_percent"
+            style="@style/InputStyle"
+            android:layout_toRightOf="@+id/label_tip_percent"
+            android:layout_alignBottom="@+id/label_tip_percent"
+            android:layout_alignRight="@id/amount_bill"
+            android:hint="@string/amount_tip_percent_hint"
+            android:inputType="number"/>
     <TextView
             android:id="@+id/label_group_number"
             style="@style/LabelStyle"
@@ -57,64 +57,70 @@
             android:layout_alignBottom="@+id/label_group_number"
             android:layout_alignRight="@id/amount_bill"
             android:hint="@string/amount_group_number_hint"
-            android:inputType="number" />
+            android:inputType="number"/>
 
     <!-- red line -->
     <View
-        android:id="@+id/red_line"
-        android:layout_below="@+id/label_group_number"
-        android:layout_marginTop="20dp"
-        android:layout_height="5dip"
-        android:layout_width="match_parent"
-        android:layout_alignLeft="@id/label_bill"
-        android:layout_alignRight="@id/amount_bill"
-        android:background="#FF00" />
+            android:id="@+id/red_line"
+            android:layout_below="@+id/label_group_number"
+            android:layout_marginTop="20dp"
+            android:layout_height="5dip"
+            android:layout_width="match_parent"
+            android:layout_alignLeft="@id/label_bill"
+            android:layout_alignRight="@id/amount_bill"
+            android:background="#FF00"/>
 
     <TextView
-        android:id="@+id/label_tip"
-        style="@style/LabelStyle"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/red_line"
-        android:layout_alignLeft="@+id/label_bill"
-        android:layout_alignRight="@+id/label_bill"
-        android:text="@string/label_tip" />
-
-    <TextView
-        android:id="@+id/amount_tip"
-        style="@style/OutputStyle"
-        android:layout_toRightOf="@+id/label_tip"
-        android:layout_alignBottom="@+id/label_tip"
-        android:layout_alignRight="@id/amount_bill"/>
-
-    <TextView
-        android:id="@+id/label_total"
-        style="@style/LabelStyle"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/label_tip"
-        android:layout_alignLeft="@+id/label_bill"
-        android:layout_alignRight="@+id/label_bill"
-        android:text="@string/label_total" />
-
-    <TextView
-        android:id="@+id/amount_total"
-        style="@style/OutputStyle"
-        android:layout_toRightOf="@+id/label_total"
-        android:layout_alignBottom="@+id/label_total"
-        android:layout_alignRight="@id/amount_bill" />
-   <!-- <TextView
-            android:id="@+id/label_total_member"
+            android:id="@+id/label_tip"
             style="@style/LabelStyle"
             android:layout_marginTop="20dp"
-            android:layout_below="@id/label_total"
+            android:layout_below="@id/red_line"
             android:layout_alignLeft="@+id/label_bill"
             android:layout_alignRight="@+id/label_bill"
-            android:text="@string/label_member_group" />
+            android:text="@string/label_tip"/>
 
     <TextView
-            android:id="@+id/amount_total_member"
+            android:id="@+id/amount_tip"
+            style="@style/OutputStyle"
+            android:layout_toRightOf="@+id/label_tip"
+            android:layout_alignBottom="@+id/label_tip"
+            android:layout_alignRight="@id/amount_bill" android:textColor="#FFFFFF"/>
+
+    <TextView
+            android:id="@+id/label_total"
+            style="@style/LabelStyle"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/label_tip"
+            android:layout_alignLeft="@+id/label_bill"
+            android:layout_alignRight="@+id/label_bill"
+            android:text="@string/label_total"/>
+
+    <TextView
+            android:id="@+id/amount_total"
             style="@style/OutputStyle"
             android:layout_toRightOf="@+id/label_total"
-            android:layout_alignBottom="@+id/label_total_member"
-            android:layout_alignRight="@id/amount_bill" />-->
+            android:layout_alignBottom="@+id/label_total"
+            android:layout_alignRight="@id/amount_bill" android:textColor="#FFFFFF"/>
+    <Button
+            android:text="Hide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/hideBtn" android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp" android:layout_alignParentStart="true" android:layout_marginStart="20dp"
+            android:layout_alignParentEnd="true" android:layout_marginEnd="20dp" android:background="#5BE861"/>
+    <!-- <TextView
+             android:id="@+id/label_total_member"
+             style="@style/LabelStyle"
+             android:layout_marginTop="20dp"
+             android:layout_below="@id/label_total"
+             android:layout_alignLeft="@+id/label_bill"
+             android:layout_alignRight="@+id/label_bill"
+             android:text="@string/label_member_group" />
+
+     <TextView
+             android:id="@+id/amount_total_member"
+             style="@style/OutputStyle"
+             android:layout_toRightOf="@+id/label_total"
+             android:layout_alignBottom="@+id/label_total_member"
+             android:layout_alignRight="@id/amount_bill" />-->
 
 </RelativeLayout>

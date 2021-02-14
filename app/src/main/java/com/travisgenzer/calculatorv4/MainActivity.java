@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +18,15 @@ public class MainActivity extends AppCompatActivity {
     private EditText billEditText;
     private EditText tipEditText;
     private EditText groupEditText;
+    private boolean visibility;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         tipCalc = new TipCalculator(0.17f, 100.0f, 1f);
         setContentView(R.layout.activity_main);
+
+        visibility = true;
 
         billEditText = (EditText)findViewById(R.id.amount_bill);
         tipEditText = (EditText)findViewById(R.id.amount_tip_percent);
@@ -32,6 +36,26 @@ public class MainActivity extends AppCompatActivity {
         billEditText.addTextChangedListener(tch);
         tipEditText.addTextChangedListener(tch);
         groupEditText.addTextChangedListener(tch);
+
+        final Button button = findViewById(R.id.hideBtn);
+        //findViewById(R.id.amount_total).setVisibility(View.GONE);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                setContentView(R.layout.activity_main);
+                System.out.println(visibility);
+                if(visibility=true)
+                {
+                findViewById(R.id.amount_total).setVisibility(View.GONE);
+                    visibility = false;
+                }
+
+                if(visibility=false)
+                {
+                    findViewById(R.id.amount_total).setVisibility(View.VISIBLE);
+                    visibility = true;
+                }
+            }
+        });
     }
 
     public void calculate()
@@ -43,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tipTextView = (TextView)findViewById(R.id.amount_tip);
         TextView totalTextView = (TextView)findViewById(R.id.amount_total);
         TextView groupTextView = (TextView)findViewById(R.id.amount_group_number);
+
 
         try {
             // convert billString and tipString to floats
