@@ -38,22 +38,19 @@ public class MainActivity extends AppCompatActivity {
         groupEditText.addTextChangedListener(tch);
 
         final Button button = findViewById(R.id.hideBtn);
-        //findViewById(R.id.amount_total).setVisibility(View.GONE);
         button.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View v) {
                 setContentView(R.layout.activity_main);
                 System.out.println(visibility);
-                if(visibility=true)
+                if(visibility)
                 {
                 findViewById(R.id.amount_total).setVisibility(View.GONE);
                     visibility = false;
                 }
-
-                if(visibility=false)
-                {
-                    findViewById(R.id.amount_total).setVisibility(View.VISIBLE);
-                    visibility = true;
-                }
+                else {
+                findViewById(R.id.amount_total).setVisibility(View.VISIBLE);
+                visibility = true; }
             }
         });
     }
